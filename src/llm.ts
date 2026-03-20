@@ -9,7 +9,14 @@ export async function generate(messages: Message[]): Promise<string> {
     let res = await ollama.chat({
         model,
         messages: [{ role: "system", content: system }, ...messages],
-        think: false
+        think: false,
+        options: {
+            // 500 tokens, safe for roughly 4 characters per 1 token
+            num_predict: 500
+        }
     });
-    return res.message.content;
+
+    let content = res.message.content.slice(0, 2000);
+
+    return content;
 }
