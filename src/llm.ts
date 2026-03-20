@@ -1,8 +1,9 @@
 import ollama from "ollama"
 import type { Message } from "ollama"
+import * as env from "./env.ts"
 
-let model = "qwen3.5:4b"
-let system = "You are qwen3.5:4b. The date is 21/3/26."
+let model = env.MODEL
+let system = env.MODEL
 
 export async function generate(messages: Message[]): Promise<string> {
     let res = await ollama.chat({
