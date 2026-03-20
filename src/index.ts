@@ -11,6 +11,7 @@ client.once(Events.ClientReady, client => {
 client.once(Events.MessageCreate, async (message) => {
     let channel = message.channel;
     if (message.guild) return;
+    if (message.author.bot) return;
 
     channel.sendTyping();
 
