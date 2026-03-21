@@ -10,5 +10,5 @@ export async function execute(interaction: ChatInputCommandInteraction) {
     // Feel free to patch this out if this isn't your thing
     let repository = "https://github.com/taxrosdev/LDA";
 
-    await interaction.reply(`I'm running commit ${getGitCommitHash()}\nRuntime information:\nBun ${Bun.version}.\n\nYou can check for the latest version at ${repository}`);
+    await interaction.reply(`I'm running commit \`${getGitCommitHash()}\`\nRuntime information:\nBun ${Bun.version}.\n\nYou can check for the latest version at \`${repository}\``);
 }

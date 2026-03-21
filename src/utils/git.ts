@@ -1,9 +1,8 @@
 export function getGitCommitHash(): string {
-    const { stdout } = Bun.spawnSync({
-        cmd: ["git", "rev-parse", "HEAD"],
-        stdout: "pipe",
-    });
-
-    return stdout.toString().replaceAll("\n", "");
+    if (process.env.GIT_HASH) {
+        return process.env.GIT_HASH;
+    } else {
+        return "DEVEL - Not in CI Pipeline";
+    }
 }
 

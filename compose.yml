@@ -1,0 +1,23 @@
+services:
+  lda:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - OLLAMA_HOST=ollama:11434
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  # This is CPU only, and is mainly a baseline of what you need.
+  # For more information, see: https://hub.docker.com/r/ollama/ollama
+  ollama:
+    image: ollama/ollama:latest
+    expose:
+      - 11434
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
