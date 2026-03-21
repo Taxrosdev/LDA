@@ -10,3 +10,4 @@ function get_env(env: string): string {
 export const MODEL = get_env("MODEL")
 export const SYSTEM = get_env("SYSTEM")
 export const DISCORD_TOKEN = get_env("DISCORD_TOKEN")
+export const DISCORD_CLIENT_ID = get_env("DISCORD_CLIENT_ID")
