@@ -29,6 +29,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: taxrosdev/lda:latest
+          tags: ghcr.io/taxrosdev/lda:latest
           build-args: |
             GIT_HASH=${{ github.sha }}
