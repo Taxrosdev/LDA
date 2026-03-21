@@ -1,5 +1,6 @@
 services:
   lda:
+    image: ghcr.io/taxrosdev/lda:latest
     build: .
     env_file:
       - .env
